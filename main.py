@@ -27,8 +27,7 @@ def main():
     
     dt = 0
     
-    print("Number of objects in updateable:", len(updateable))
-    print("Number of objects in drawable:", len(drawable))
+    
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
