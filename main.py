@@ -21,6 +21,7 @@ def main():
 
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     asteroidfield = AsteroidField()
+    
     dt = 0
     
     print("Number of objects in updateable:", len(updateable))
@@ -31,6 +32,11 @@ def main():
                 return
         
         updateable.update(dt)
+
+        for obj in asteroids:
+            if obj.collisions(player):
+                print("Game over!")
+                exit()
         
         screen.fill("black")
         
