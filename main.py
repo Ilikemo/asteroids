@@ -26,6 +26,8 @@ def main():
     asteroidfield = AsteroidField()
     
     dt = 0
+    Score = 0
+    shots_fired = 0
     
     
     while True:
@@ -40,9 +42,14 @@ def main():
                 if obj.collisions(shot):
                     obj.split()
                     shot.kill()
+                    Score += 1
+                    shots_fired += 1
 
             if obj.collisions(player):
                 print("Game over!")
+                print(f"Score: {Score}")
+                print(f"Shots fired: {shots_fired}")
+                print(f"Accuracy: {(shots_fired / Score) * 100}%")
                 exit()
             
         
